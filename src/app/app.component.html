@@ -2,12 +2,30 @@
 <div style="text-align:center">
   <!-- <h4>Root</h4> -->
   <h1>
-    Welcome to {{ title }}!
+    {{ title | lowercase }}!
   </h1>
-  <input type="text" #textName (keyup)="0" />
-  <p>Argree number:{{agree}} Disagree number:{{disagree}}</p>
+  <p>
+    Date today: {{today|date:"shortDate"}}
+  </p>
+  <p>
+    A percent:{{percentA|percent }}
+    <br> B percent:{{percentB|percent:'4.3-5'}}
+  </p>
+  <p>
+    number A:{{numberA|number}}
+    <br> number B:{{numberB|number:'3.1-5'}}
+    <br> number B:{{numberB|number:'1.1-2'}}
+  </p>
+  <p>
+    <li *ngFor="let stu of arrStudent | slice:0:3">
+      {{stu}}
+    </li>
+  </p>
+  <p>
+    {{2| exponentialStrength:2}}
+  </p>
   <div>
-    <my-tutorial *ngFor="let person of names" [name]="person" (onVote)="parentVote($event)"></my-tutorial>
+    <my-tutorial></my-tutorial>
   </div>
 
 
