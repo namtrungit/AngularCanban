@@ -14,4 +14,6 @@ import { FormsModule } from '@angular/forms'; // Thư viện chứa ngModel
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
+

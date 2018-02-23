@@ -1,29 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     // tslint:disable-next-line:component-selector
     selector: 'my-tutorial',
     template: `
-    <div>
-    <p [ngClass]="{classOne:cOne,classTwo:cTwo}">This is ngClass apply style</p>
-    <button (click)="changeColor()">Đổi màu</button>
-    </div>
-    <p [ngStyle]="{'font-style':style,'font-size':size}">This paragraph will be apply to ngStyle</p>
+    <p>
+    Child Component: {{name}}
+    </p>
+    <button [disabled] = "voted" (click)="vote(true)">Agree</button>
+    <button [disabled] = "voted" (click)="vote(false)">Disagree</button>
+    Result: {{voted}}
     `,
-    styles: [`
-        .classOne {color: white}
-        .classTwo {background-color:black}
-    `]
 })
 export class TutorialComponent {
-    // ngClass
-    public cOne = true;
-    public cTwo = true;
-    // ngStyle ít dùng
-    public style = 'italic';
-    public size = '30px';
-    changeColor() {
-        this.cOne = !this.cOne;
-        this.cTwo = !this.cTwo;
+    @Input() name: string;
+    // tslint:disable-next-line:no-output-on-prefix
+    @Output() onVote = new EventEmitter<boolean>();
+    public voted = false;
+    vote(agree: boolean) {
+        this.voted = true;
+        this.onVote.emit(agree);
     }
 }
