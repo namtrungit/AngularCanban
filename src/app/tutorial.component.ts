@@ -3,22 +3,27 @@ import { Component } from '@angular/core';
 @Component({
     // tslint:disable-next-line:component-selector
     selector: 'my-tutorial',
-    template: `<h3 *ngIf="showLineIf">this ngIf directive line.</h3>
-    <div [ngSwitch] = "color">
-        <p *ngSwitchCase="'red'">this is color is red</p>
-        <p *ngSwitchCase="'blue'">this is color is blue</p>
-        <p *ngSwitchCase="'green'">this is color is green</p>
-        <p *ngSwitchDefault>invalid color</p>
+    template: `
+    <div>
+    <p [ngClass]="{classOne:cOne,classTwo:cTwo}">This is ngClass apply style</p>
+    <button (click)="changeColor()">Đổi màu</button>
     </div>
-    <ul>
-        <li *ngFor = "let cl of colors">
-            {{cl}}
-        </li>
-    </ul>
+    <p [ngStyle]="{'font-style':style,'font-size':size}">This paragraph will be apply to ngStyle</p>
     `,
+    styles: [`
+        .classOne {color: white}
+        .classTwo {background-color:black}
+    `]
 })
 export class TutorialComponent {
-    public showLineIf = true; // *ngIf True thì hiển thị thẻ h3 và ngược lại
-    public color = 'abc'; // [ngSwitch]
-    public colors: string[] = ['red', 'blue', 'green']; // *ngFor
+    // ngClass
+    public cOne = true;
+    public cTwo = true;
+    // ngStyle ít dùng
+    public style = 'italic';
+    public size = '30px';
+    changeColor() {
+        this.cOne = !this.cOne;
+        this.cTwo = !this.cTwo;
+    }
 }
