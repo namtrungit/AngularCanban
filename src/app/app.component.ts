@@ -11,6 +11,4 @@ export class AppComponent {
   title = 'TRUNG';
   // property binding
   public image = 'http://media.tinthethao.com.vn/files/bongda/2017/09/27/nhung-ban-thang-mang-thuong-hieu-david-villa-215826jpg.jpg';
-
-  public welcome = 'Anh Trung đẹp trai';
 }

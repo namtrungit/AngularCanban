@@ -3,8 +3,11 @@ import { Component } from '@angular/core';
 @Component({
     // tslint:disable-next-line:component-selector
     selector: 'my-tutorial',
-    template: `<h2 [style.color]="blueColor?'blue':'yellow'">Bùi Nam Trung</h2>
-    <h3 [class.greenColor] ="applyClass">Học hutech</h3>
+    template: `<h2>{{title}}</h2>
+    <input type="text" #name/>
+    <button (click)="clickName(name.value)">Click name</button>
+    <button (click)="onClick()">Click me</button>
+    <button (mouseover)="mouseOver()">MouseOver</button>
     `,
     // styleUrls: ['./app.component.css'],
     styles: [`.greenColor{
@@ -12,6 +15,14 @@ import { Component } from '@angular/core';
     }`],
 })
 export class TutorialComponent {
-    public applyClass = true; // True thì class này sẽ dc áp dụng và ngược lại
-    public blueColor = false; // True thì sẽ là blue còn false thì sẽ là yellow
+    public title = 'Bùi Nam Trung';
+    onClick() {
+        console.log('Click me');
+    }
+    mouseOver() {
+        console.log('Mouse over');
+    }
+    clickName(value) {
+        console.log(value);
+    }
 }
