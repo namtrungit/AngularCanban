@@ -5,14 +5,16 @@ import { TutorialComponent } from './tutorial.component';
 import { FormsModule } from '@angular/forms'; // Thư viện chứa ngModel
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeeService } from './employee/employee.service';
+import { HomeComponent } from './home/home.component';
 import { HttpModule } from '@angular/http';
+import { appRouter } from './app.routes';
 
 @NgModule({
   declarations: [
-    AppComponent, TutorialComponent, EmployeeComponent
+    AppComponent, TutorialComponent, EmployeeComponent, HomeComponent
   ],
   imports: [
-    BrowserModule, FormsModule, HttpModule
+    BrowserModule, FormsModule, HttpModule, appRouter
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]
