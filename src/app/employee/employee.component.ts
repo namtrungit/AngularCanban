@@ -4,7 +4,6 @@ import { EmployeeService } from './employee.service';
   selector: 'app-employee',
   templateUrl: './employee.component.html',
   styleUrls: ['./employee.component.css'],
-  providers: [EmployeeService]
 })
 export class EmployeeComponent implements OnInit {
   public employees: any[];
@@ -12,6 +11,10 @@ export class EmployeeComponent implements OnInit {
 
   }
   ngOnInit() {
-    this.employees = this.empLoyeeService.getList();
+    this.empLoyeeService.getList().subscribe((response: any) => {
+      this.employees = response;
+    }, error => {
+      console.log(error);
+    });
   }
 }

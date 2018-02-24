@@ -1,3 +1,18 @@
-<ul>
-  <li *ngFor="let em of employees">{{em.emName}}</li>
-</ul>
+<table class="table">
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Age</td>
+      <td>Status</td>
+      <td>CreatedAt</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let em of employees">
+      <td>{{em.name}}</td>
+      <td>{{em.age}}</td>
+      <td>{{em.status}}</td>
+      <td>{{em.createdAt | date}}</td>
+    </tr>
+  </tbody>
+</table>
