@@ -1,4 +1,7 @@
-h4,h2 {
-    color: blueviolet;
+.ng-valid[required],.ng-valid.required{
+    border-left: green 5px solid;
+}
+.ng-invalid:not(form){
+    border-left: red 5px solid;
 }
 
