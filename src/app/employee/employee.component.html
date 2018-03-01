@@ -13,6 +13,9 @@
       <td>{{em.age}}</td>
       <td>{{em.status}}</td>
       <td>{{em.createdAt | date}}</td>
+      <td>
+        <a [routerLink]="['/detail',em.id]">Show</a>
+      </td>
     </tr>
   </tbody>
 </table>

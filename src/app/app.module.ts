@@ -9,10 +9,11 @@ import { HomeComponent } from './home/home.component';
 import { HttpModule } from '@angular/http';
 import { appRouter } from './app.routes';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { DetailComponent } from './employee/detail/detail.component';
 
 @NgModule({
   declarations: [
-    AppComponent, TutorialComponent, EmployeeComponent, HomeComponent, NotfoundComponent
+    AppComponent, TutorialComponent, EmployeeComponent, HomeComponent, NotfoundComponent, DetailComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpModule, appRouter
