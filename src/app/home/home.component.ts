@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) {
+  }
 
   ngOnInit() {
+  }
+  goToEmployee() {
+    this.router.navigate(['employee']);
+    // Chức năng này phục vụ cho việc trả về 1 trang nào đó khi nhấn vào 1 button
   }
 
 }
