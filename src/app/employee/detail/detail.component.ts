@@ -22,7 +22,6 @@ export class DetailComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscription = this.activatedroute.params.subscribe(param => {
       this.id = param['id'];
-      alert(this.id);
     });
     this.employeeService.getEm(this.id).subscribe((data) => {
       this.employee = data;

@@ -10,10 +10,19 @@ import { HttpModule } from '@angular/http';
 import { appRouter } from './app.routes';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { DetailComponent } from './employee/detail/detail.component';
+import { OverviewComponent } from './employee/detail/overview/overview.component';
+import { ProjectComponent } from './employee/detail/project/project.component';
 
 @NgModule({
   declarations: [
-    AppComponent, TutorialComponent, EmployeeComponent, HomeComponent, NotfoundComponent, DetailComponent
+    AppComponent,
+    TutorialComponent,
+    EmployeeComponent,
+    HomeComponent,
+    NotfoundComponent,
+    DetailComponent,
+    OverviewComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule, FormsModule, HttpModule, appRouter
