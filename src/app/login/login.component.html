@@ -1,0 +1,15 @@
+<form class="form-horizoanl" #f='ngForm'>
+  <div class="form-group">
+    <label class="col-md-2">Username</label>
+    <div class="col-md-10">
+      <input type="text" class="form-control" name="username" ngModel/>
+    </div>
+    <label class="col-md-2">Password</label>
+    <div class="col-md-10">
+      <input type="password" class="form-control" name="password" ngModel/>
+    </div>
+  </div>
+  <div class="col-md-10">
+    <button class="btn btn-primary" (click)="checkLogin(f.value)">Login</button>
+  </div>
+</form>
