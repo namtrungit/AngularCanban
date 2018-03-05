@@ -9,6 +9,8 @@ import { patch } from 'webdriver-js-extender';
 import { LoginComponent } from './login/login.component';
 import { CheckLoginGuard } from './guard/check-login.guard';
 import { CheckSaveFormGuard } from './guard/check-save-form.guard';
+import { EditComponent } from './employee/edit/edit.component';
+import { AddComponent } from './employee/add/add.component';
 
 const routing: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -21,6 +23,8 @@ const routing: Routes = [
             { path: 'project', component: ProjectComponent }
         ]
     },
+    { path: 'add', component: AddComponent },
+    { path: 'edit/:id', component: EditComponent },
     { path: 'login', component: LoginComponent },
     { path: '**', component: NotfoundComponent }
 ];

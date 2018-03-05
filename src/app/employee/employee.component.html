@@ -1,3 +1,6 @@
+<div class="row">
+  <a [routerLink]="['/add']">Add</a>
+</div>
 <table class="table">
   <thead>
     <tr>
@@ -15,6 +18,9 @@
       <td>{{em.createdAt | date}}</td>
       <td>
         <a [routerLink]="['/detail',em.id]">Show</a>
+      </td>
+      <td>
+        <a [routerLink]="['/edit',em.id]">Edit</a>
       </td>
     </tr>
   </tbody>
