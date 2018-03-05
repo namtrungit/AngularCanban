@@ -10,6 +10,7 @@ export class EmployeeComponent implements OnInit {
   public employees: any[];
   public pages: number[];
   public currentPage: number;
+  public keyword: string;
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
@@ -43,5 +44,12 @@ export class EmployeeComponent implements OnInit {
       });
     }
   }
-
+  searchEm() {
+    this.empLoyeeService.searchEm(this.keyword).subscribe((response: any) => {
+      this.employees = response;
+      console.log('check');
+    }, error => {
+      console.log(error);
+    });
+  }
 }

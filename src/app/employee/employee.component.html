@@ -1,5 +1,13 @@
 <div class="row">
-  <a [routerLink]="['/add']" class="btn btn-success">Add</a>
+  <div class="col-md-12">
+    <div class="col-md-4">
+      <a [routerLink]="['/add']" class="btn btn-success">Add</a>
+    </div>
+    <div class="col-md-4">
+      <input type="text" [(ngModel)]='keyword' name='keyword'>
+      <button class="btn btn-info" (click)='searchEm()'>Search</button>
+    </div>
+  </div>
 </div>
 <table class="table">
   <thead>
@@ -23,15 +31,15 @@
         <a [routerLink]="['/edit',em.id]" class="btn btn-info">Edit</a>
       </td>
       <td>
-          <button class="btn btn-danger" (click)="delEm(em.id)">Delete</button>
-        </td>
+        <button class="btn btn-danger" (click)="delEm(em.id)">Delete</button>
+      </td>
     </tr>
   </tbody>
 </table>
 <nav aria-label="Page navigation example">
   <ul class="pagination">
     <li class="page-item" *ngFor="let p of pages">
-      <a class="page-link" [routerLink]= "['/employee']" [queryParams]='{pageNumber:p,filter:"a"}'>{{p}}</a>
+      <a class="page-link" [routerLink]="['/employee']" [queryParams]='{pageNumber:p,filter:"a"}'>{{p}}</a>
     </li>
   </ul>
 </nav>

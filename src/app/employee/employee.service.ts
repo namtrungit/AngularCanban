@@ -25,4 +25,7 @@ export class EmployeeService {
   delEm(id: any) {
     return this._http.delete(this.apiUrl + '/' + id).map((response: Response) => response.json());
   }
+  searchEm(keyword: string): Observable<any> {
+    return this._http.get(this.apiUrl + '/?search=' + keyword).map((response: Response) => response.json());
+  }
 }
