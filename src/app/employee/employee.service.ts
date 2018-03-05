@@ -22,4 +22,7 @@ export class EmployeeService {
   addEm(data: any): Observable<any> {
     return this._http.post(this.apiUrl, data).map((response: Response) => response.json());
   }
+  delEm(id: any) {
+    return this._http.delete(this.apiUrl + '/' + id).map((response: Response) => response.json());
+  }
 }

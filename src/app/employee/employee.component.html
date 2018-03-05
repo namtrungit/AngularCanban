@@ -1,5 +1,5 @@
 <div class="row">
-  <a [routerLink]="['/add']">Add</a>
+  <a [routerLink]="['/add']" class="btn btn-success">Add</a>
 </div>
 <table class="table">
   <thead>
@@ -17,11 +17,14 @@
       <td>{{em.status}}</td>
       <td>{{em.createdAt | date}}</td>
       <td>
-        <a [routerLink]="['/detail',em.id]">Show</a>
+        <a [routerLink]="['/detail',em.id]" class="btn btn-light">Show</a>
       </td>
       <td>
-        <a [routerLink]="['/edit',em.id]">Edit</a>
+        <a [routerLink]="['/edit',em.id]" class="btn btn-info">Edit</a>
       </td>
+      <td>
+          <button class="btn btn-danger" (click)="delEm(em.id)">Delete</button>
+        </td>
     </tr>
   </tbody>
 </table>

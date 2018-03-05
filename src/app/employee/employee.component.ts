@@ -22,11 +22,26 @@ export class EmployeeComponent implements OnInit {
       console.log(this.currentPage);
       console.log(param['filter']);
     });
+    this.loadEm();
+    this.pages = [1, 2, 3, 4, 5];
+  }
+  loadEm() {
     this.empLoyeeService.getList().subscribe((response: any) => {
       this.employees = response;
     }, error => {
       console.log(error);
     });
-    this.pages = [1, 2, 3, 4, 5];
   }
+  delEm(id: number) {
+    const comfirm = confirm('Are you sure?');
+    if (comfirm) {
+      this.empLoyeeService.delEm(id).subscribe(res => {
+        if (res) {
+          alert('Xóa thành công');
+          this.loadEm();
+        }
+      });
+    }
+  }
+
 }
